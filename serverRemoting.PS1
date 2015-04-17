@@ -13,7 +13,8 @@ $list= Get-Content -Path $currentuser\documents\list.txt
 #set your credential for remoting (can also use $env:USERNAME)
 $credential = "mydomain\user"
 
-$server= Read-Host -Prompt "Choose Which server you wish to remote to (1. $list[0], 2. $list[1], 3. $list[2]...)"
+Write-Host Choose Which server you wish to remote to 1. $list[0] 2. $list[1] 3. $list[2]
+$server= Read-Host -Prompt "Please enter your selection"
 switch($server){
 1{start powershell | Enter-PSSession -ComputerName $list[0] -Credential $credential}
 2{start powershell | Enter-PSSession -ComputerName $list[1] -Credential $credential}
